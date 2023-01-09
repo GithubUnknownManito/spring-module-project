@@ -1,14 +1,17 @@
 package com.module.crud.dao;
 
+import com.module.crud.api.CrudDaoInterface;
 import com.module.crud.provider.CrudInsertProvider;
-import com.module.crud.api.CrudInterface;
 import com.module.crud.entity.ObjectEntity;
 import com.module.crud.provider.CrudSelectFindProvider;
 import com.module.crud.provider.CrudUpdateProvider;
 import org.apache.ibatis.annotations.*;
 
+import java.util.Collection;
+import java.util.List;
+
 @Mapper
-public interface CrudDao<E extends ObjectEntity> extends CrudInterface<E> {
+public interface CrudDao<E extends ObjectEntity> extends CrudDaoInterface<E> {
 
     public static final String __JavaAlias = "param";
     @Override
@@ -26,5 +29,12 @@ public interface CrudDao<E extends ObjectEntity> extends CrudInterface<E> {
     @Override
     @UpdateProvider(type = CrudUpdateProvider.class, method = "initialize")
     public Long Update(@Param(__JavaAlias)E e);
+
+    public List<E> FindList(E e);
+
+    public E FindById(E e);
+
+    public <C> Long DeleteBatchById(Collection<C> array, Class<?> c);
+
 
 }

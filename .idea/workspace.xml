@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47e3a1c8-15ff-40d9-ae76-cffe246589a0" name="Changes" comment="" />
+    <list default="true" id="47e3a1c8-15ff-40d9-ae76-cffe246589a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/api/CrudDaoInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/api/CrudServiceInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/api/CrudInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/dao/CrudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/dao/CrudDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/service/CrudServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/service/CrudServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/service/ICrudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/service/ICrudService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,11 +23,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -36,6 +48,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
     "jdk.selected.JAVA_MODULE": "1.8",
@@ -99,10 +112,22 @@
       <workItem from="1672889825349" duration="1617000" />
       <workItem from="1672891472481" duration="31756000" />
       <workItem from="1672982732148" duration="30238000" />
+      <workItem from="1673226464590" duration="3802000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

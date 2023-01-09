@@ -13,8 +13,6 @@ public class CrudServiceImpl <E extends ObjectEntity> implements ICrudService<E>
 
     @Autowired
     private CrudDao dao;
-
-
     @Override
     public E Inset(E e) {
         return (E) dao.Inset(e);
@@ -44,11 +42,6 @@ public class CrudServiceImpl <E extends ObjectEntity> implements ICrudService<E>
     public E FindById(E e) {
         BaseEntity baseEntity =new BaseEntity();
         return (E) dao.FindById(e);
-    }
-
-    @Override
-    public Long DeleteById(E e) {
-        return dao.DeleteById(e);
     }
 
     @Override
