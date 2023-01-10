@@ -48,7 +48,7 @@
 //        columnList = columnAttrs.stream().map(column -> getSqlSelectColumnAlias(column)).collect(Collectors.toList());
 //    }
 //
-//    private String GetWhere(ColumnAttr column){
+//    private String GetWhere(CrudColumnAttr column){
 //        return column.query.getText(column.column, getSqlParam(column));
 //    }
 //

@@ -22,8 +22,8 @@
 //    public String tableName;
 //    public Table table;
 //    public List<Field> fieldList;
-//    public Map<String, List<ColumnAttr>> fieldColumn = new HashMap<>();
-//    public List<ColumnAttr> columnAttrs = new ArrayList<>();
+//    public Map<String, List<CrudColumnAttr>> fieldColumn = new HashMap<>();
+//    public List<CrudColumnAttr> columnAttrs = new ArrayList<>();
 //
 //    public <E> String initialize(E data) {
 //        targetObject = data;
@@ -36,11 +36,11 @@
 //        switch (table.pattern()) {
 //            case FIELD: {
 //                fieldList.forEach(field -> {
-//                    List<ColumnAttr> columnList = new ArrayList<>();
+//                    List<CrudColumnAttr> columnList = new ArrayList<>();
 //                    if (fieldColumn.containsKey(field.getName())) {
 //                        columnList = fieldColumn.get(field.getName());
 //                    }
-//                    columnList.add(new ColumnAttr(field));
+//                    columnList.add(new CrudColumnAttr(field));
 //                    fieldColumn.put(field.getName(), columnList);
 //                });
 //                if (!table.pattern().equals(Pattern.BLEND)) {
@@ -49,16 +49,16 @@
 //            }
 //            case ANNOTATION: {
 //                Arrays.asList(table.column()).forEach(column -> {
-//                    List<ColumnAttr> columnList = new ArrayList<>();
+//                    List<CrudColumnAttr> columnList = new ArrayList<>();
 //                    if (fieldColumn.containsKey(column.property())) {
 //                        columnList = fieldColumn.get(column.property());
 //                    }
-//                    columnList.add(new ColumnAttr(column));
+//                    columnList.add(new CrudColumnAttr(column));
 //                    fieldColumn.put(column.property(), columnList);
 //                });
 //
 //                fieldList.forEach(field -> {
-//                    List<ColumnAttr> columnList = new ArrayList<>();
+//                    List<CrudColumnAttr> columnList = new ArrayList<>();
 //                    Column column = AnnotationUtils.findAnnotation(field, Column.class);
 //                    if (Objects.isNull(column)) {
 //                        return;
@@ -67,13 +67,13 @@
 //
 //                        columnList = fieldColumn.get(field.getName());
 //                    }
-//                    columnList.add(new ColumnAttr(column, field));
+//                    columnList.add(new CrudColumnAttr(column, field));
 //                    fieldColumn.put(field.getName(), columnList);
 //                });
 //            }
 //        }
 //        fieldColumn.values().forEach(array -> {
-//            Optional<ColumnAttr> columnAttrOptional = array.stream().sorted((t1, t2) -> t2.weight - t1.weight).findAny();
+//            Optional<CrudColumnAttr> columnAttrOptional = array.stream().sorted((t1, t2) -> t2.weight - t1.weight).findAny();
 //            if (columnAttrOptional.isPresent()) {
 //                columnAttrs.add(columnAttrOptional.get());
 //            }
@@ -96,7 +96,7 @@
 //        return fields;
 //    }
 //
-//    public Object getValue(ColumnAttr column) {
+//    public Object getValue(CrudColumnAttr column) {
 //        return getValue(targetObject, column.property);
 //    }
 //
@@ -108,21 +108,21 @@
 //        }
 //    }
 //
-//    public String getSqlColumnAlias(ColumnAttr column){
+//    public String getSqlColumnAlias(CrudColumnAttr column){
 //        if (StringUtils.isNoneBlank(table.alias())) {
 //            return String.format("%s.%s AS %s", table.alias(), column.column, column.property);
 //        }
 //        return String.format("%s AS %s", column.column, column.property);
 //    }
 //
-//    public String getSqlSelectColumnAlias(ColumnAttr column){
+//    public String getSqlSelectColumnAlias(CrudColumnAttr column){
 //        if (StringUtils.isNoneBlank(table.alias())) {
 //            return String.format("%s.%s AS %s", table.alias(), column.column, column.property);
 //        }
 //        return String.format("%s AS %s", column.column, column.property);
 //    }
 //
-//    public String getSqlParam(ColumnAttr column) {
+//    public String getSqlParam(CrudColumnAttr column) {
 //        if (StringUtils.isNoneBlank(CrudDao.__JavaAlias)) {
 //            return String.format("#{%s.%s}", CrudDao.__JavaAlias ,column.property);
 //        }
@@ -131,7 +131,7 @@
 //
 //
 //
-//    public <T> void setValue(ColumnAttr column, Object value) {
+//    public <T> void setValue(CrudColumnAttr column, Object value) {
 //        setValue(targetObject, column.property, value, column.javaType);
 //    }
 //
@@ -159,11 +159,11 @@
 //    }
 //
 //
-//    public boolean isValueNotBlank(ColumnAttr column) {
+//    public boolean isValueNotBlank(CrudColumnAttr column) {
 //        return !isValueBlank(column);
 //    }
 //
-//    public boolean isValueBlank(ColumnAttr column) {
+//    public boolean isValueBlank(CrudColumnAttr column) {
 //        Object data = getValue(column);
 //        if (Objects.isNull(data)) {
 //            return true;
@@ -174,7 +174,7 @@
 //        return false;
 //    }
 //
-//    public boolean isValueNotNull(ColumnAttr column) {
+//    public boolean isValueNotNull(CrudColumnAttr column) {
 //        return !isValueNull(column);
 //    }
 //
@@ -182,7 +182,7 @@
 //        return !isValueNull(obj, fieldName);
 //    }
 //
-//    public boolean isValueNull(ColumnAttr column) {
+//    public boolean isValueNull(CrudColumnAttr column) {
 //        return Objects.isNull(getValue(column));
 //    }
 //
@@ -198,7 +198,7 @@
 //        return Join(collection.collect(Collectors.toList()));
 //    }
 //
-//    public static Object GeneratePrimary(ColumnAttr attr) {
+//    public static Object GeneratePrimary(CrudColumnAttr attr) {
 //        if (PrimaryType.FOREIGN_KEY.equals(attr.primaryType)) {
 //            return null;
 //        }
@@ -217,10 +217,10 @@
 //    }
 //
 //    public static Object GeneratePrimary(Column column) {
-//        return GeneratePrimary(new ColumnAttr(column));
+//        return GeneratePrimary(new CrudColumnAttr(column));
 //    }
 //
-//    static class ColumnAttr {
+//    static class CrudColumnAttr {
 //
 //
 //    }

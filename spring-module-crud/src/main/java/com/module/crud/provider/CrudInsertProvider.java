@@ -35,7 +35,7 @@
 //    }
 //
 //    private void InitPrimary() {
-//        Stream<ColumnAttr> PrimaryList = columnAttrs.stream().filter(column -> column.isPrimary);
+//        Stream<CrudColumnAttr> PrimaryList = columnAttrs.stream().filter(column -> column.isPrimary);
 //        PrimaryList.forEach(column -> {
 //            Object PrimaryKey = GeneratePrimary(column);
 //            if (Objects.nonNull(PrimaryKey)) {

@@ -39,7 +39,7 @@
 //    }
 //
 //    private void InitPrimary() {
-//        Stream<ColumnAttr> columnAttrStream = columnAttrs.stream().filter(columnAttr -> columnAttr.isPrimary && columnAttr.primaryType.equals(PrimaryType.PRIMARY_KEY));
+//        Stream<CrudColumnAttr> columnAttrStream = columnAttrs.stream().filter(columnAttr -> columnAttr.isPrimary && columnAttr.primaryType.equals(PrimaryType.PRIMARY_KEY));
 //        if (columnAttrStream.count() == 0) {
 //            throw new RuntimeException(String.format("实体类%s找不到有效的主键", targetClass.getName()));
 //        }

@@ -79,4 +79,9 @@ public @interface Column {
      */
     public Class<?> javaType() default void.class;
 
+    /**
+     * 继承
+     */
+    public Class<?> inheritance() default void.class;
+
 }

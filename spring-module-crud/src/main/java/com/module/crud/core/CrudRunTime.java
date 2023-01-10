@@ -2,14 +2,19 @@ package com.module.crud.core;
 
 import com.module.crud.annotation.Column;
 import com.module.crud.annotation.Table;
+import com.module.crud.enumerate.MethodModel;
 import com.module.crud.enumerate.Pattern;
+import com.module.crud.enumerate.PrimaryType;
 import com.module.crud.utils.ClassUtils;
 import org.springframework.core.annotation.AnnotationUtils;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public abstract class CrudRunTime {
 
@@ -26,20 +31,39 @@ public abstract class CrudRunTime {
     }
 
     private void initializeAttr() {
-        Table table = AnnotationUtils.findAnnotation(targetClass, Table.class);
-        tableAttr = new CrudTableAttr(table);
-        List<Column> columns = Arrays.asList(table.column());
+        tableAttr = ClassUtils.getTableAttr(targetClass);
+        List<CrudColumnAttr> columnAttrList = new ArrayList<>();
         List<Field> fieldList = ClassUtils.getFields(targetClass);
-        if(Pattern.ANNOTATION.equals(table.pattern())){
-            fieldList.forEach(field -> {
-                if(field.isAnnotationPresent(Column.class)){
-
+        boolean isBlend = !Pattern.BLEND.equals(tableAttr.pattern);
+        switch (tableAttr.pattern) {
+            case FIELD: {
+                for (int i = 0; i < fieldList.size(); i++) {
+                    columnAttrList.add(new CrudColumnAttr(fieldList.get(i)));
                 }
-                columns.stream().filter(column -> column.property().equals(field.getName()))
-            });
+                if (isBlend) {
+                    break;
+                }
+            }
+            case ANNOTATION: {
+                columnAttrList.addAll(ClassUtils.getColumnList(targetClass));
+                if (isBlend) {
+                    break;
+                }
+            }
         }
 
+        columnAttrs = columnAttrList.stream().map(column -> column.property).distinct().map(property -> {
+            return columnAttrList.stream().filter(column -> column.property == property).sorted((a, b) -> b.weight - a.weight).findAny().get();
+        }).collect(Collectors.toList());
 
+        columnAttrs.stream().filter(c-> c.isPrimary && c.primaryType.equals(PrimaryType.PRIMARY_KEY) && c.javaType.equals(void.class) ).forEach(column -> {
+             try {
+                 Method method = ClassUtils.getMethod(targetClass, column.property, MethodModel.GET, false);
+                 column.javaType = method.getReturnType();
+             }catch (Throwable throwable){
+                 throw  new RuntimeException("查找到未定义Java字段类型的主键，将在尝试补充是发生异常，详情查看内部原因", throwable);
+             }
+        });
     }
 
     public abstract String run();

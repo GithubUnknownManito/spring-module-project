@@ -10,8 +10,7 @@ import java.lang.reflect.Field;
 
 public class CrudColumnAttr {
 
-    private CrudColumnAttr(Column column, Object targetObject) {
-        this.targetObject = targetObject;
+    public CrudColumnAttr(Column column) {
         this.column = column.column();
         this.isPrimary = column.isPrimary();
         this.PrimaryRule = column.PrimaryRule();
@@ -20,16 +19,24 @@ public class CrudColumnAttr {
         this.sort = column.sort();
         this.jdbcType = column.jdbcType();
         this.javaType = column.javaType();
-        this.weight = column.weight();
         this.primaryType = column.primaryType();
         this.queryModel = column.queryModel();
+        this.weight = 1;
     }
 
-    public CrudColumnAttr(Column column, Field field, Object targetObject) {
-        this(column,targetObject);
+    public CrudColumnAttr(Column column, Field field) {
+        this(column);
         this.column = StringUtils.isBlank(column.column()) ? field.getName() : column.column();
         this.property = StringUtils.isBlank(column.property()) ? field.getName() : column.property();
         this.javaType = column.javaType().equals(void.class) ? field.getType() : column.javaType();
+        this.weight = 3;
+    }
+
+    public CrudColumnAttr(Field field) {
+        this.column = field.getName();
+        this.property = field.getName();
+        this.javaType = field.getType();
+        this.weight = 0;
     }
 
     private Object targetObject;
@@ -46,14 +53,37 @@ public class CrudColumnAttr {
     public Class<?> javaType;
     public int weight = 0;
 
-    public Object getValue(){
+    public void merge(CrudColumnAttr column) {
+        this.column = column.column;
+        this.isPrimary = column.isPrimary;
+        this.PrimaryRule = column.PrimaryRule;
+        this.query = column.query;
+        this.property = column.property;
+        this.sort = column.sort;
+        this.jdbcType = column.jdbcType;
+        this.javaType = column.javaType;
+        this.primaryType = column.primaryType;
+        this.queryModel = column.queryModel;
+        this.weight = column.weight;
+    }
+
+    public Object getTargetObject() {
+        return targetObject;
+    }
+
+    public void setTargetObject(Object targetObject) {
+        this.targetObject = targetObject;
+    }
+
+    public Object getValue() {
         return ClassUtils.getValue(targetObject, property);
     }
-    public void setValue(Object value){
+
+    public void setValue(Object value) {
         ClassUtils.setValue(targetObject, property, value, javaType);
     }
 
-    public void GeneratePrimary(){
+    public void createPrimary() {
         setValue(ClassUtils.GeneratePrimary(this));
     }
 
