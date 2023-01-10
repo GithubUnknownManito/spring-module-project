@@ -14,38 +14,38 @@ public class CrudServiceImpl <E extends ObjectEntity> implements ICrudService<E>
     @Autowired
     private CrudDao dao;
     @Override
-    public E Inset(E e) {
-        return (E) dao.Inset(e);
+    public E inset(E e) {
+        return (E) dao.inset(e);
     }
 
     @Override
-    public E Find(E e) {
-        return (E) dao.Find(e);
+    public E find(E e) {
+        return (E) dao.find(e);
     }
 
     @Override
-    public Long Update(E e) {
-        return dao.Update(e);
+    public Long update(E e) {
+        return dao.update(e);
     }
 
     @Override
-    public Long Delete(E e) {
-        return dao.Delete(e);
+    public Long delete(E e) {
+        return dao.delete(e);
     }
 
     @Override
-    public List<E> FindList(E e) {
-        return dao.FindList(e);
+    public List<E> findList(E e) {
+        return dao.findList(e);
     }
 
     @Override
-    public E FindById(E e) {
+    public E findById(E e) {
         BaseEntity baseEntity =new BaseEntity();
-        return (E) dao.FindById(e);
+        return (E) dao.findById(e);
     }
 
     @Override
-    public <C> Long DeleteBatchById(Collection<C> array, Class<?> c) {
-        return dao.DeleteBatchById(array, c);
+    public <C> Long deleteBatchById(Collection<C> array, Class<?> c) {
+        return dao.deleteBatchById(array, c);
     }
 }

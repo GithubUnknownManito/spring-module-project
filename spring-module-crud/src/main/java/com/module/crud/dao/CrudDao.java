@@ -16,25 +16,25 @@ public interface CrudDao<E extends ObjectEntity> extends CrudDaoInterface<E> {
     public static final String __JavaAlias = "param";
     @Override
     @InsertProvider(type = CrudInsertProvider.class, method = "initialize")
-    E Inset(@Param(__JavaAlias) E e);
+    E inset(@Param(__JavaAlias) E e);
 
     @Override
     @SelectProvider(type = CrudSelectFindProvider.class, method = "initialize")
-    E Find(@Param(__JavaAlias) E e);
+    E find(@Param(__JavaAlias) E e);
 
     @Override
     @DeleteProvider
-    Long Delete(@Param(__JavaAlias)E e);
+    Long delete(@Param(__JavaAlias)E e);
 
     @Override
     @UpdateProvider(type = CrudUpdateProvider.class, method = "initialize")
-    public Long Update(@Param(__JavaAlias)E e);
+    public Long update(@Param(__JavaAlias)E e);
 
-    public List<E> FindList(E e);
+    public List<E> findList(E e);
 
-    public E FindById(E e);
+    public E findById(E e);
 
-    public <C> Long DeleteBatchById(Collection<C> array, Class<?> c);
+    public <C> Long deleteBatchById(Collection<C> array, Class<?> c);
 
 
 }

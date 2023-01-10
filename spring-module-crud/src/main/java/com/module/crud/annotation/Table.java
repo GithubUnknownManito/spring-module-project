@@ -44,6 +44,9 @@ public @interface Table {
      */
     public Join[] join() default {};
 
+    public One[] one() default {};
+    public Many[] many() default {};
+
     /**
      * 继承
      */

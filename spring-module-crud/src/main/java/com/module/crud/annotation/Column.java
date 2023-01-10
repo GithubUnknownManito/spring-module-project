@@ -7,6 +7,15 @@ import org.springframework.core.annotation.AliasFor;
 
 import java.lang.annotation.*;
 
+/**
+ * 列，用于标识
+ * * 权重<br/>
+ * *      * <b>注：</b> 数值越高权重越重，高权重覆低权重<br/>
+ * *      * 默认权重为 0 <br/>
+ * *      * <b>ANNOTATION</b> 模式下 表注解 Column -> 字段注解 <br/>
+ * *      * <b>FIELD</b>      模式下 无权重仅使用 字段进行生成 <br/>
+ * *      * <b>BLEND</b>      模式下 字段 -> 表注解 Column -> 字段注解 <br/>
+ */
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
@@ -45,6 +54,7 @@ public @interface Column {
 
     /**
      * 查询关联形式
+     *
      * @return
      */
     public QueryModel queryModel() default QueryModel.AND;
@@ -68,15 +78,5 @@ public @interface Column {
      * 属性类型
      */
     public Class<?> javaType() default void.class;
-
-    /**
-     * 权重<br/>
-     * <b>注：</b> 数值越高权重越重，高权重覆低权重<br/>
-     * 默认权重为 0 <br/>
-     * <b>ANNOTATION</b> 模式下 表注解 Column -> 字段注解 <br/>
-     * <b>FIELD</b>      模式下 无权重仅使用 字段进行生成 <br/>
-     * <b>BLEND</b>      模式下 字段 -> 表注解 Column -> 字段注解 <br/>
-     */
-    public int weight() default 0;
 
 }

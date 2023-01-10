@@ -14,6 +14,6 @@ public interface ICrudService<E extends ObjectEntity> extends CrudServiceInterfa
      * @param <C> 主键 类型
      */
     default <C> Long DeleteBatchById(C[] array, Class<?> c) {
-        return DeleteBatchById(Arrays.asList(array), c);
+        return deleteBatchById(Arrays.asList(array), c);
     }
 }
