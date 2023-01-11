@@ -7,6 +7,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public abstract class CrudRunTime {
@@ -16,6 +17,7 @@ public abstract class CrudRunTime {
     private CrudTableAttr tableAttr;
     private List<CrudColumnAttr> columnAttrs = new ArrayList<>();
     private CrudExpandAttr sqlExpandData;
+    private boolean isExpandWhere;
 
     public <E> String initialize(E data) {
         this.targetObject = data;
@@ -26,6 +28,7 @@ public abstract class CrudRunTime {
 
     private void initializeAttr() {
         sqlExpandData = ClassUtils.getExpand(targetObject, ExpandType.SqlData);
+        isExpandWhere = Objects.nonNull(sqlExpandData);
         tableAttr = ClassUtils.getTableAttr(targetClass);
         List<CrudColumnAttr> columnAttrList = new ArrayList<>();
         List<Field> fieldList = ClassUtils.getFields(targetClass);

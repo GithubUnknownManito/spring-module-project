@@ -40,12 +40,6 @@ public class CrudServiceImpl <E extends ObjectEntity> implements ICrudService<E>
 
     @Override
     public E findById(E e) {
-        BaseEntity baseEntity =new BaseEntity();
         return (E) dao.findById(e);
-    }
-
-    @Override
-    public <C> Long deleteBatchById(Collection<C> array, Class<?> c) {
-        return dao.deleteBatchById(array, c);
     }
 }

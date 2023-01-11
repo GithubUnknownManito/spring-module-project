@@ -1,4 +1,4 @@
 package com.module.crud.provider;
 
-public class CrudUpdateProvider {
+public class CrudDeleteProvider {
 }

@@ -45,13 +45,4 @@ public interface CrudDaoInterface<E> {
      * @return
      */
     public Long delete(E e);
-
-    /**
-     * 批量删除，根据主键
-     * @param array 删除主键集合
-     * @param c 主键 类型
-     * @return 删除条数
-     * @param <C> 主键 类型
-     */
-    public <C> Long deleteBatchById(Collection<C> array, Class<?> c);
 }
