@@ -33,9 +33,9 @@ public interface CrudDao<E extends ObjectEntity> extends CrudDaoInterface<E> {
 
     @Override
     @SelectProvider(type = CrudFindListProvider.class, method = "initialize")
-    public List<E> findList(E e);
+    public List<E> findList(@Param(__JavaAlias)E e);
 
     @SelectProvider(type = CrudFindByIdProvider.class, method = "initialize")
-    public E findById(E e);
+    public E findById(@Param(__JavaAlias)E e);
 
 }

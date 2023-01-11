@@ -1,4 +1,10 @@
 package com.module.crud.provider;
 
-public class CrudDeleteProvider {
+import com.module.crud.core.CrudRunTime;
+
+public class CrudDeleteProvider extends CrudRunTime {
+    @Override
+    public String run() {
+        return null;
+    }
 }

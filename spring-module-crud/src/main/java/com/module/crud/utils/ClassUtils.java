@@ -177,9 +177,6 @@ public class ClassUtils {
             return null;
         }
         switch (attr.PrimaryRule) {
-            case UNSET: {
-                return null;
-            }
             case UUID: {
                 return UUID.randomUUID().toString();
             }

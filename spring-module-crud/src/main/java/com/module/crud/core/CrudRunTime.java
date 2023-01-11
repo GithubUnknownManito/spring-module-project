@@ -12,12 +12,12 @@ import java.util.stream.Collectors;
 
 public abstract class CrudRunTime {
 
-    private Class<?> targetClass;
-    private Object targetObject;
-    private CrudTableAttr tableAttr;
-    private List<CrudColumnAttr> columnAttrs = new ArrayList<>();
-    private CrudExpandAttr sqlExpandData;
-    private boolean isExpandWhere;
+    protected Class<?> targetClass;
+    protected Object targetObject;
+    protected CrudTableAttr tableAttr;
+    protected List<CrudColumnAttr> columnAttrs = new ArrayList<>();
+    protected CrudExpandAttr sqlExpandData;
+    protected boolean isExpandWhere;
 
     public <E> String initialize(E data) {
         this.targetObject = data;

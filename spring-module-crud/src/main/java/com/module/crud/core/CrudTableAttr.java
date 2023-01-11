@@ -11,17 +11,11 @@ public class CrudTableAttr {
     public String tableName;
     public String alias;
     public Pattern pattern;
-    public List<One> oneList;
-    public List<Many> manyList;
-    public List<Join> joinList;
 
     public CrudTableAttr(Table table) {
         this.pattern = table.pattern();
         this.alias = table.alias();
         this.tableName = StringUtils.isBlank(table.name()) ? table.value() : table.name();
-        this.oneList = Arrays.asList(table.one());
-        this.manyList = Arrays.asList(table.mans());
-        this.joinList = Arrays.asList(table.join());
     }
 
     public String getTableNameBySelect(){

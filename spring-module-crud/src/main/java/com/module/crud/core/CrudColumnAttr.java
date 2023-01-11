@@ -1,12 +1,14 @@
 package com.module.crud.core;
 
 import com.module.crud.annotation.Column;
+import com.module.crud.dao.CrudDao;
 import com.module.crud.enumerate.*;
 import com.module.crud.utils.ClassUtils;
-import org.apache.commons.lang3.StringUtils;
+import com.module.crud.utils.StringUtils;
 import org.apache.ibatis.type.JdbcType;
 
 import java.lang.reflect.Field;
+import java.util.Objects;
 
 public class CrudColumnAttr {
 
@@ -81,6 +83,21 @@ public class CrudColumnAttr {
 
     public void setValue(Object value) {
         ClassUtils.setValue(targetObject, property, value, javaType);
+    }
+
+    public boolean isValueNull(){
+        Object value = getValue();
+        if(Objects.nonNull(value)){
+            if(value instanceof String){
+                return StringUtils.isNotBlank(value.toString());
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public String getParamProperty(){
+        return String.format("#{%s.%s}", CrudDao.__JavaAlias, property);
     }
 
     public void createPrimary() {
