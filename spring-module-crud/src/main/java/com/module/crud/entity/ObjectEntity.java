@@ -2,6 +2,7 @@ package com.module.crud.entity;
 
 import com.module.crud.annotation.Expand;
 import com.module.crud.annotation.Ignore;
+import com.module.crud.core.CrudPage;
 import com.module.crud.enumerate.ExpandType;
 import com.module.crud.sql.CrudWhere;
 
@@ -16,7 +17,8 @@ public class ObjectEntity implements Serializable {
     @Ignore
     private static final String DISABLE_PRIMARY = "__SQL_DISABLE_PRIMARY__";
 
-
+    @Ignore
+    private CrudPage page;
 
     @Expand(value = ExpandType.SqlData)
     private Map<String,Object> SqlData = new HashMap<>();
@@ -44,5 +46,15 @@ public class ObjectEntity implements Serializable {
         return SqlData;
     }
 
+    public CrudPage getPage() {
+        return page;
+    }
 
+    public void setPage(CrudPage page) {
+        this.page = page;
+    }
+
+    public void setPage(int pageNum, int pageSize) {
+        this.page = new CrudPage(pageNum, pageSize);
+    }
 }
