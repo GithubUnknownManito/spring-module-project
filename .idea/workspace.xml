@@ -5,20 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47e3a1c8-15ff-40d9-ae76-cffe246589a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudDeleteProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudFindByIdProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudFindListProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudFindProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/api/CrudDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/api/CrudDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudRunTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudRunTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/api/CrudServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/api/CrudServiceInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/api/ICrudProviderSqlText.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/dao/CrudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/dao/CrudDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudInsertProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudInsertProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudRunTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudSelectFindProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudUpdateProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudUpdateProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/service/CrudServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/service/CrudServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/entity/ObjectEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/entity/ObjectEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/service/ICrudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/service/ICrudService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/utils/ClassUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/utils/ClassUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +115,7 @@
       <workItem from="1672889825349" duration="1617000" />
       <workItem from="1672891472481" duration="31756000" />
       <workItem from="1672982732148" duration="30238000" />
-      <workItem from="1673226464590" duration="40090000" />
+      <workItem from="1673226464590" duration="45463000" />
     </task>
     <servers />
   </component>

@@ -35,7 +35,7 @@ public class ClassUtils {
             if(join.columns().length < 0){
                 Column[] columns = join.columns();
                 for (int j = 0; j < columns.length; j++) {
-                    columnAttrList.add(new CrudColumnAttr(columns[i]));
+                    columnAttrList.add(new CrudColumnAttr(columns[j]));
                 }
             } else {
                 columnAttrList.addAll(getColumnList(targetClass));
@@ -57,7 +57,7 @@ public class ClassUtils {
             if(one.columns().length < 0){
                 Column[] columns = one.columns();
                 for (int j = 0; j < columns.length; j++) {
-                    columnAttrList.add(new CrudColumnAttr(columns[i]));
+                    columnAttrList.add(new CrudColumnAttr(columns[j]));
                 }
             } else {
                 columnAttrList.addAll(getColumnList(targetClass));
@@ -79,7 +79,7 @@ public class ClassUtils {
             if(many.columns().length < 0){
                 Column[] columns = many.columns();
                 for (int j = 0; j < columns.length; j++) {
-                    columnAttrList.add(new CrudColumnAttr(columns[i]));
+                    columnAttrList.add(new CrudColumnAttr(columns[j]));
                 }
             } else {
                 columnAttrList.addAll(getColumnList(targetClass));

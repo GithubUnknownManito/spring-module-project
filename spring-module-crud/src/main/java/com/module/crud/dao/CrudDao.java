@@ -1,5 +1,6 @@
 package com.module.crud.dao;
 
+import com.github.pagehelper.PageInfo;
 import com.module.crud.api.CrudDaoInterface;
 import com.module.crud.provider.*;
 import com.module.crud.entity.ObjectEntity;
@@ -14,6 +15,8 @@ public interface CrudDao<E extends ObjectEntity> extends CrudDaoInterface<E> {
     public static final String __JavaAlias = "param";
     @Override
     @InsertProvider(type = CrudInsertProvider.class, method = "initialize")
+    @InsertProvider.List({})
+    @Results
     E inset(@Param(__JavaAlias) E e);
 
     @Override
@@ -29,10 +32,10 @@ public interface CrudDao<E extends ObjectEntity> extends CrudDaoInterface<E> {
     public Long update(@Param(__JavaAlias)E e);
 
     @Override
-    @UpdateProvider(type = CrudFindListProvider.class, method = "initialize")
+    @SelectProvider(type = CrudFindListProvider.class, method = "initialize")
     public List<E> findList(E e);
 
-    @UpdateProvider(type = CrudFindByIdProvider.class, method = "initialize")
+    @SelectProvider(type = CrudFindByIdProvider.class, method = "initialize")
     public E findById(E e);
 
 }

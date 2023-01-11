@@ -11,9 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 public class ObjectEntity implements Serializable {
-    private static final int _SQL_KEY = 200;
+    @Ignore
     private static final String WHERE_KEY = "__SQL_WHERE__";
+    @Ignore
     private static final String DISABLE_PRIMARY = "__SQL_DISABLE_PRIMARY__";
+
+
 
     @Expand(value = ExpandType.SqlData)
     private Map<String,Object> SqlData = new HashMap<>();

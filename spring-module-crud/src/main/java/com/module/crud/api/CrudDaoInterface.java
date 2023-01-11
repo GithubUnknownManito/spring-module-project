@@ -1,5 +1,7 @@
 package com.module.crud.api;
 
+import com.github.pagehelper.PageInfo;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -17,6 +19,7 @@ public interface CrudDaoInterface<E> {
      * @return
      */
     public List<E> findList(E e);
+
 
     /**
      * 查找，根据主键查找
