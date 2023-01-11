@@ -5,7 +5,7 @@ import com.module.crud.enumerate.Pattern;
 
 import java.lang.annotation.*;
 
-@Target({ElementType.FIELD})
+@Target({})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Many {
@@ -14,12 +14,19 @@ public @interface Many {
      */
     public Class<?> quote();
     /**
+     * 属性（字段）
+     */
+    public String property();
+    /**
      * 别称
      */
-    public String alias() default "";
-
+    public String alias();
+    /**
+     * 关联SQL
+     */
+    public String on();
     /**
      * 列
      */
-    public Column[] column() default {};
+    public Column[] columns() default {};
 }

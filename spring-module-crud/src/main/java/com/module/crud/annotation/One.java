@@ -6,10 +6,14 @@ import org.springframework.core.annotation.AliasFor;
 
 import java.lang.annotation.*;
 
-@Target({ElementType.FIELD})
+@Target({})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface One {
+    /**
+     * 属性（字段）
+     */
+    public String property();
     /**
      * 引用住类
      */
@@ -17,10 +21,13 @@ public @interface One {
     /**
      * 别称
      */
-    public String alias() default "";
+    public String alias();
     /**
      * 列
      */
-    public Column[] column() default {};
-
+    public Column[] columns() default {};
+    /**
+     * 连接内容
+     */
+    public String on();
 }

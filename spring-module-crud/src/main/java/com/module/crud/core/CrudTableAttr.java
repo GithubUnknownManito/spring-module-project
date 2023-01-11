@@ -20,7 +20,7 @@ public class CrudTableAttr {
         this.alias = table.alias();
         this.tableName = StringUtils.isBlank(table.name()) ? table.value() : table.name();
         this.oneList = Arrays.asList(table.one());
-        this.manyList = Arrays.asList(table.many());
+        this.manyList = Arrays.asList(table.mans());
         this.joinList = Arrays.asList(table.join());
     }
 

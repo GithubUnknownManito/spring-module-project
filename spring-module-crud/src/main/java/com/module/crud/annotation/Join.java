@@ -1,17 +1,18 @@
 package com.module.crud.annotation;
 
+import com.module.crud.enumerate.JoinType;
 import org.springframework.core.annotation.AliasFor;
 
 import java.lang.annotation.*;
 
-@Target({ElementType.FIELD})
+@Target({})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Join {
     /**
-     * 表名
+     * 引用住类
      */
-    public String name();
+    public Class<?> quote();
 
     /**
      * 别称
@@ -24,7 +25,12 @@ public @interface Join {
     public String on();
 
     /**
+     * 关联方式
+     */
+    public JoinType joinType() default JoinType.LEFT;
+
+    /**
      * 列
      */
-    public Column[] column() default {};
+    public Column[] columns() default {};
 }

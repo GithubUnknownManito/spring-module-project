@@ -2,7 +2,10 @@ package com.module.crud.utils;
 
 import com.module.crud.annotation.*;
 import com.module.crud.core.CrudColumnAttr;
+import com.module.crud.core.CrudExpandAttr;
+import com.module.crud.core.CrudJoinAttr;
 import com.module.crud.core.CrudTableAttr;
+import com.module.crud.enumerate.ExpandType;
 import com.module.crud.enumerate.MethodModel;
 import com.module.crud.enumerate.PrimaryType;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -20,10 +23,76 @@ public class ClassUtils {
         return new CrudTableAttr(table);
     }
 
+    public static List<CrudJoinAttr> getJoin(Class<?> targetClass){
+        List<CrudJoinAttr> joinAttrList = new ArrayList<>();
+        Table table = AnnotationUtils.findAnnotation(targetClass, Table.class);
+        Join[] joins = table.joinList();
+        for (int i = 0; i < joins.length; i++) {
+            List<CrudColumnAttr> columnAttrList =new ArrayList<>();
+            Join join = joins[i];
+
+            Table quoteType= AnnotationUtils.findAnnotation(join.quote(), Table.class);
+            if(join.columns().length < 0){
+                Column[] columns = join.columns();
+                for (int j = 0; j < columns.length; j++) {
+                    columnAttrList.add(new CrudColumnAttr(columns[i]));
+                }
+            } else {
+                columnAttrList.addAll(getColumnList(targetClass));
+            }
+            joinAttrList.add(new CrudJoinAttr(join, quoteType.name(), columnAttrList));
+        }
+        return joinAttrList;
+    }
+
+    public static List<CrudJoinAttr> getOne(Class<?> targetClass){
+        List<CrudJoinAttr> joinAttrList = new ArrayList<>();
+        Table table = AnnotationUtils.findAnnotation(targetClass, Table.class);
+        One[] oneList = table.oneList();
+        for (int i = 0; i < oneList.length; i++) {
+            List<CrudColumnAttr> columnAttrList =new ArrayList<>();
+            One one = oneList[i];
+
+            Table quoteType= AnnotationUtils.findAnnotation(one.quote(), Table.class);
+            if(one.columns().length < 0){
+                Column[] columns = one.columns();
+                for (int j = 0; j < columns.length; j++) {
+                    columnAttrList.add(new CrudColumnAttr(columns[i]));
+                }
+            } else {
+                columnAttrList.addAll(getColumnList(targetClass));
+            }
+            joinAttrList.add(new CrudJoinAttr(one, quoteType.name(), columnAttrList));
+        }
+        return joinAttrList;
+    }
+
+    public static List<CrudJoinAttr> getMany(Class<?> targetClass){
+        List<CrudJoinAttr> joinAttrList = new ArrayList<>();
+        Table table = AnnotationUtils.findAnnotation(targetClass, Table.class);
+        Many[] manyList = table.manyList();
+        for (int i = 0; i < manyList.length; i++) {
+            List<CrudColumnAttr> columnAttrList =new ArrayList<>();
+            Many many = manyList[i];
+
+            Table quoteType= AnnotationUtils.findAnnotation(many.quote(), Table.class);
+            if(many.columns().length < 0){
+                Column[] columns = many.columns();
+                for (int j = 0; j < columns.length; j++) {
+                    columnAttrList.add(new CrudColumnAttr(columns[i]));
+                }
+            } else {
+                columnAttrList.addAll(getColumnList(targetClass));
+            }
+            joinAttrList.add(new CrudJoinAttr(many, quoteType.name(), columnAttrList));
+        }
+        return joinAttrList;
+    }
+
     public static List<CrudColumnAttr> getColumnList(Class<?> targetClass) {
         List<CrudColumnAttr> columns = new ArrayList<>();
         Table table = AnnotationUtils.findAnnotation(targetClass, Table.class);
-        Column[] columnsArray = table.column();
+        Column[] columnsArray = table.columns();
         for (int i = 0; i < columnsArray.length; i++) {
             if (columnsArray[i].inheritance().equals(void.class)) {
                 columns.add(new CrudColumnAttr(columnsArray[i]));
@@ -53,17 +122,29 @@ public class ClassUtils {
         if (!table.inheritance().equals(void.class)) {
             fields.addAll(getFields(table.inheritance()));
         }
-        return fields;
+        return fields.stream().filter(field -> !field.isAnnotationPresent(Ignore.class)).collect(Collectors.toList());
     }
 
-    public static Method getMethod(Class<?> targetClass, String fieldName, MethodModel model, boolean isAccessible) {
+    public static CrudExpandAttr getExpand(Object target, ExpandType expandType){
+        List<Field> fields = getFields(target.getClass());
+        Optional<Field> expandOptional = fields.stream().filter(field -> field.isAnnotationPresent(Expand.class) && field.getAnnotation(Expand.class).value().equals(expandType)).findAny();
+        if(expandOptional.isPresent()){
+            Field field = expandOptional.get();
+            return new CrudExpandAttr(field.getAnnotation(Expand.class), field, getValue(target, field.getName()));
+        }
+        return null;
+    }
+
+    public static Method getMethod(Class<?> targetClass, String fieldName, MethodModel model, boolean required) {
         String UpChat = fieldName.substring(0, 1).toUpperCase();
         String YYName = fieldName.substring(1);
         Method method = null;
         try {
             method = targetClass.getMethod(model.getText() + UpChat + YYName);
         } catch (NoSuchMethodException e) {
-            throw new RuntimeException(String.format("在实体%s中未能找到%s方法"), e);
+            if(required){
+                throw new RuntimeException(String.format("在实体%s中未能找到%s方法"), e);
+            }
         }
         method.setAccessible(true);
         return method;

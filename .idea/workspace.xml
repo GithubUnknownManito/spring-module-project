@@ -5,16 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47e3a1c8-15ff-40d9-ae76-cffe246589a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/enumerate/MethodModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudExpandAttr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudJoinAttr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/enumerate/JoinType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudColumnAttr.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudColumnAttr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Join.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Join.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Many.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Many.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/One.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/One.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Table.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudRunTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudRunTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudTableAttr.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudTableAttr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudInsertProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudInsertProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudRunTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudRunTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudSelectFindProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudSelectFindProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudUpdateProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudUpdateProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/entity/BaseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/utils/ClassUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/utils/ClassUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,9 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="AnnotationType" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -115,7 +116,7 @@
       <workItem from="1672889825349" duration="1617000" />
       <workItem from="1672891472481" duration="31756000" />
       <workItem from="1672982732148" duration="30238000" />
-      <workItem from="1673226464590" duration="28236000" />
+      <workItem from="1673226464590" duration="39734000" />
     </task>
     <servers />
   </component>
