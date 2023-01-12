@@ -1,5 +1,6 @@
 package com.module.crud.entity;
 
+import com.module.crud.annotation.Column;
 import com.module.crud.annotation.Expand;
 import com.module.crud.annotation.Ignore;
 import com.module.crud.core.CrudPage;
@@ -19,6 +20,8 @@ public class ObjectEntity implements Serializable {
 
     @Ignore
     private CrudPage page;
+
+
 
     @Expand(value = ExpandType.SqlData)
     private Map<String,Object> SqlData = new HashMap<>();

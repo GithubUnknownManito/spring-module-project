@@ -11,7 +11,8 @@ import java.util.Date;
                 @Column(column = "create_by", property = "createBy"),
                 @Column(column = "update_date", property = "updateDate"),
                 @Column(column = "update_by", property = "updateBy"),
-                @Column(column = "remark", property = "remark")
+                @Column(column = "remark", property = "remark"),
+                @Column(column = "status", property = "status")
         },
         oneList = {
                 @One(quote = ObjectEntity.class, property = "", alias = "b", on = "a.xxx = b.xxx",  columns = {
@@ -34,8 +35,8 @@ import java.util.Date;
 public class BaseEntity extends ObjectEntity {
     private Date createDate;
     private String createBy;
-    @Column(column = "update_date", property = "updateDate")
     private Date updateDate;
     private String updateBy;
     private String remark;
+    private int status;
 }
