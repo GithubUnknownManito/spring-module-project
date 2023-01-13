@@ -5,14 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47e3a1c8-15ff-40d9-ae76-cffe246589a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/common/CrudConfigure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/utils/SpringContextUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/interceptor/ManyInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/interceptor/OneInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/dao/RoomDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/entity/RoomEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/service/IRoomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/service/Impl/RoomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/web/RoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/entity/ObjectEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/entity/ObjectEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudDeleteProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudDeleteProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudUpdateProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudUpdateProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Join.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Join.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudColumnAttr.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudColumnAttr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudJoinAttr.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudJoinAttr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudRunTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudRunTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudFindByIdProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudFindByIdProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/utils/ClassUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/utils/ClassUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +37,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -40,26 +55,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "E:/.project/spring-module-project/spring-module-main/src/main/java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.48735633",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "27fad25c287ec55bd47692db2a483a27"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/.project/spring-module-project/spring-module-main/src/main/java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.48735633&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;27fad25c287ec55bd47692db2a483a27&quot;
   }
-}]]></component>
+}</component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
@@ -112,7 +127,8 @@
       <workItem from="1672889825349" duration="1617000" />
       <workItem from="1672891472481" duration="31756000" />
       <workItem from="1672982732148" duration="30238000" />
-      <workItem from="1673226464590" duration="52353000" />
+      <workItem from="1673226464590" duration="57442000" />
+      <workItem from="1673573579234" duration="11325000" />
     </task>
     <servers />
   </component>
@@ -129,5 +145,41 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/interceptor/ManyInterceptor.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudColumnAttr.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudColumnAttr.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudColumnAttr.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudColumnAttr.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudColumnAttr.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -7,6 +7,7 @@
         <module>spring-module-main</module>
         <module>spring-module-api</module>
         <module>spring-module-crud</module>
+        <module>spring-module-common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -31,6 +32,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -119,9 +124,9 @@
             </releases>
         </repository>
         <repository>
-            <id>aliyun</id>
+            <id>central</id>
             <name>2319930-snapshot-xQ0GKG</name>
-            <url>https://packages.aliyun.com/maven/repository/2319930-snapshot-xQ0GKG</url>
+            <url>https://maven.aliyun.com/repository/central</url>
         </repository>
     </repositories>
 

@@ -96,7 +96,14 @@ public class CrudColumnAttr {
         return false;
     }
 
+    public boolean isValueNotNull(){
+        return !isValueNull();
+    }
+
     public String getParamProperty(){
+        return String.format("#{%s.%s}", CrudDao.__JavaAlias, property);
+    }
+    public String getSelectColumn(){
         return String.format("#{%s.%s}", CrudDao.__JavaAlias, property);
     }
 

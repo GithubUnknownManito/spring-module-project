@@ -23,71 +23,32 @@ public class ClassUtils {
         return new CrudTableAttr(table);
     }
 
-    public static List<CrudJoinAttr> getJoin(Class<?> targetClass){
+    public static List<CrudJoinAttr> getJoin(Class<?> targetClass) {
         List<CrudJoinAttr> joinAttrList = new ArrayList<>();
         Table table = AnnotationUtils.findAnnotation(targetClass, Table.class);
         Join[] joins = table.joinList();
         for (int i = 0; i < joins.length; i++) {
             List<CrudColumnAttr> columnAttrList =new ArrayList<>();
             Join join = joins[i];
-
-            Table quoteType= AnnotationUtils.findAnnotation(join.quote(), Table.class);
+            Column[] columns = join.columns();
             if(join.columns().length < 0){
-                Column[] columns = join.columns();
                 for (int j = 0; j < columns.length; j++) {
-                    columnAttrList.add(new CrudColumnAttr(columns[j]));
+                    if(columns[j].inheritance().equals(void.class)){
+                        columnAttrList.add(new CrudColumnAttr(columns[i]));
+                    } else {
+                        columnAttrList.addAll(getColumnList(columns[j].inheritance()));
+                    }
                 }
             } else {
                 columnAttrList.addAll(getColumnList(targetClass));
             }
-            joinAttrList.add(new CrudJoinAttr(join, quoteType.name(), columnAttrList));
+            joinAttrList.add(new CrudJoinAttr(join, AnnotationUtils.findAnnotation(join.quote(), Table.class), columnAttrList));
         }
+
         return joinAttrList;
     }
 
-    public static List<CrudJoinAttr> getOne(Class<?> targetClass){
-        List<CrudJoinAttr> joinAttrList = new ArrayList<>();
-        Table table = AnnotationUtils.findAnnotation(targetClass, Table.class);
-        One[] oneList = table.oneList();
-        for (int i = 0; i < oneList.length; i++) {
-            List<CrudColumnAttr> columnAttrList =new ArrayList<>();
-            One one = oneList[i];
 
-            Table quoteType= AnnotationUtils.findAnnotation(one.quote(), Table.class);
-            if(one.columns().length < 0){
-                Column[] columns = one.columns();
-                for (int j = 0; j < columns.length; j++) {
-                    columnAttrList.add(new CrudColumnAttr(columns[j]));
-                }
-            } else {
-                columnAttrList.addAll(getColumnList(targetClass));
-            }
-            joinAttrList.add(new CrudJoinAttr(one, quoteType.name(), columnAttrList));
-        }
-        return joinAttrList;
-    }
-
-    public static List<CrudJoinAttr> getMany(Class<?> targetClass){
-        List<CrudJoinAttr> joinAttrList = new ArrayList<>();
-        Table table = AnnotationUtils.findAnnotation(targetClass, Table.class);
-        Many[] manyList = table.manyList();
-        for (int i = 0; i < manyList.length; i++) {
-            List<CrudColumnAttr> columnAttrList =new ArrayList<>();
-            Many many = manyList[i];
-
-            Table quoteType= AnnotationUtils.findAnnotation(many.quote(), Table.class);
-            if(many.columns().length < 0){
-                Column[] columns = many.columns();
-                for (int j = 0; j < columns.length; j++) {
-                    columnAttrList.add(new CrudColumnAttr(columns[j]));
-                }
-            } else {
-                columnAttrList.addAll(getColumnList(targetClass));
-            }
-            joinAttrList.add(new CrudJoinAttr(many, quoteType.name(), columnAttrList));
-        }
-        return joinAttrList;
-    }
 
     public static List<CrudColumnAttr> getColumnList(Class<?> targetClass) {
         List<CrudColumnAttr> columns = new ArrayList<>();

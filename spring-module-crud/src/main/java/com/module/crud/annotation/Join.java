@@ -27,7 +27,7 @@ public @interface Join {
     /**
      * 关联方式
      */
-    public JoinType joinType() default JoinType.LEFT;
+//    public JoinType joinType() default JoinType.LEFT;
 
     /**
      * 列

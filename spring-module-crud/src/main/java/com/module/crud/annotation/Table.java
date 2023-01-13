@@ -42,7 +42,7 @@ public @interface Table {
     public Many[] manyList() default {};
 
     /**
-     * 继承
+     * 继承, 等同于 类上的 extends
      */
     public Class<?> inheritance() default void.class;
 

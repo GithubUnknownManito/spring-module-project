@@ -18,6 +18,7 @@ public abstract class CrudRunTime {
     protected List<CrudColumnAttr> columnAttrs = new ArrayList<>();
     protected CrudExpandAttr sqlExpandData;
     protected boolean isExpandWhere;
+    protected List<CrudJoinAttr> joinList;
 
     public <E> String initialize(E data) {
         this.targetObject = data;
@@ -66,6 +67,8 @@ public abstract class CrudRunTime {
         columnAttrs.forEach(column -> {
             column.setTargetObject(targetObject);
         });
+
+        joinList = ClassUtils.getJoin(targetClass);
     }
 
     public abstract String run();
