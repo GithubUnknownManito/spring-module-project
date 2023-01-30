@@ -8,13 +8,17 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-module-main" />
         <module name="spring-module-common" />
-        <module name="spring-module-crud" />
+        <module name="spring-ibatis-crud" />
         <module name="spring-module-api" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-module-crud" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-ibatis-crud" options="-parameters" />
       <module name="spring-module-api" options="-parameters" />
       <module name="spring-module-common" options="-parameters" />
       <module name="spring-module-crud" options="-parameters" />

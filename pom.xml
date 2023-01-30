@@ -6,7 +6,7 @@
     <modules>
         <module>spring-module-main</module>
         <module>spring-module-api</module>
-        <module>spring-module-crud</module>
+        <module>spring-ibatis-crud</module>
         <module>spring-module-common</module>
     </modules>
     <parent>
@@ -67,11 +67,19 @@
             <artifactId>slf4j-api</artifactId>
             <version>2.0.5</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>mysql</groupId>-->
+<!--            <artifactId>mysql-connector-java</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
+            <version>8.0.32</version>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
         <dependency>

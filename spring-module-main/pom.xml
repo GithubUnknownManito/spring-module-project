@@ -27,13 +27,7 @@
         </dependency>
         <dependency>
             <groupId>com.module</groupId>
-            <artifactId>spring-module-crud</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.module</groupId>
-            <artifactId>spring-module-crud</artifactId>
+            <artifactId>spring-ibatis-crud</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
