@@ -2,9 +2,7 @@ package com.module.crud.framework.core;
 
 import com.module.crud.annotation.Join;
 import com.module.crud.annotation.Table;
-import com.module.crud.enumerate.Pattern;
 import com.module.crud.framework.utils.ClassUtils;
-import com.module.crud.framework.utils.StringUtils;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.core.annotation.AnnotationUtils;
 

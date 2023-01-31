@@ -5,66 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47e3a1c8-15ff-40d9-ae76-cffe246589a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderColumn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderJoin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderRunTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/sql/CrudSeWhere.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/utils/ClassUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/Column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Expand.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/Expand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Ignore.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/Ignore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Join.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/Join.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Many.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/Many.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/One.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/One.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/annotation/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/api/CrudDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/api/CrudDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/api/CrudServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/api/CrudServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/common/CrudConfigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/common/CrudConfigure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudColumnAttr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudExpandAttr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudJoinAttr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudRunTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/core/CrudTableAttr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/dao/CrudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/dao/CrudDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/entity/ObjectEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/entity/ObjectEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/enumerate/ColumnSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/enumerate/ColumnSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/enumerate/ExpandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/enumerate/ExpandType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/enumerate/JoinType.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/enumerate/JoinType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/enumerate/MethodModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/enumerate/MethodModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/enumerate/Pattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/enumerate/Pattern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/enumerate/PrimaryGenerate.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/enumerate/PrimaryGenerate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/enumerate/PrimaryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/enumerate/PrimaryType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/enumerate/QueryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/enumerate/QueryModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/enumerate/QueryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/enumerate/QueryType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/interceptor/ManyInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/interceptor/ManyInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/interceptor/OneInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/interceptor/OneInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudDeleteProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudDeleteProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudFindByIdProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudFindByIdProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudFindListProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudFindListProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudFindProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudFindProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudInsertProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudInsertProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/provider/CrudUpdateProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudUpdateProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/service/CrudServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/service/CrudServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/service/ICrudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/service/ICrudService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/sql/CrudWhere.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/sql/CrudWhere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/utils/ClassUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/utils/SpringContextUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/utils/SpringContextUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/java/com/module/crud/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/utils/StringUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/resources/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/src/test/java/com/module/crud/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/test/java/com/module/crud/Test1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-crud/target/classes/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/target/classes/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/entity/ObjectEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/entity/ObjectEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderRunTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderRunTime.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +119,7 @@
       <workItem from="1672982732148" duration="30238000" />
       <workItem from="1673226464590" duration="57442000" />
       <workItem from="1673573579234" duration="11325000" />
-      <workItem from="1674965997808" duration="39057000" />
+      <workItem from="1674965997808" duration="40635000" />
     </task>
     <servers />
   </component>

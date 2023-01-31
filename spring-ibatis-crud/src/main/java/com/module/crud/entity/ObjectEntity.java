@@ -16,7 +16,6 @@ public class ObjectEntity implements Serializable {
     private static final String WHERE_KEY = "__SQL_WHERE__";
     @Ignore
     private static final String DISABLE_PRIMARY = "__SQL_DISABLE_PRIMARY__";
-
     @Ignore
     private CrudPage page;
 
