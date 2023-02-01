@@ -34,10 +34,10 @@ public class CrudInsertProvider extends CrudProviderRunTime implements CrudProvi
     }
 
     public String[] columnsSql(){
-        return columns().map(column -> column.column).toArray(String[]::new);
+        return columns().filter(column -> column.requireNonNull()).map(column -> column.column).toArray(String[]::new);
     }
 
     public String[] valuesSql(){
-        return columns().map(column -> column.valueSql()).toArray(String[]::new);
+        return columns().filter(column -> column.requireNonNull()).map(column -> column.valueSql()).toArray(String[]::new);
     }
 }

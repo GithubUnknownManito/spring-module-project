@@ -22,12 +22,12 @@ public class CrudUpdateProvider extends CrudProviderRunTime implements CrudProvi
     }
 
     public String[] columnPrimary(){
-        return columns().filter(column -> column.isPrimary && column.isNotBlank())
+        return columns().filter(column -> column.isPrimary && column.isNonNull())
                 .map(column -> String.format("%s = %s",column.column, column.valueSql())).toArray(String[]::new);
     }
 
     public String[] columnsSql(){
-        return columns().filter(column -> !column.isPrimary && column.isNotBlank())
+        return columns().filter(column -> !column.isPrimary && column.isNonNull())
                 .map(column -> String.format("%s = %s",column.column, column.valueSql())).toArray(String[]::new);
     }
 }

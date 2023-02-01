@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47e3a1c8-15ff-40d9-ae76-cffe246589a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/entity/test1Rntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/entity/testEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/Column.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderColumn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderRunTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderRunTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudDeleteProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudDeleteProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudFindByIdProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudFindByIdProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudFindProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudFindProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudInsertProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudInsertProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudUpdateProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/provider/CrudUpdateProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/utils/ClassUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/utils/ClassUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/test/java/com/module/crud/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/test/java/com/module/crud/Test1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +87,7 @@
       <recent name="com.module.crud" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringModuleMainApplication">
+  <component name="RunManager" selected="JUnit.Test1.emd">
     <configuration name="Test1.emd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-ibatis-crud" />
       <extension name="coverage">
@@ -120,7 +133,7 @@
       <workItem from="1674965997808" duration="40655000" />
       <workItem from="1675152643930" duration="6000" />
       <workItem from="1675152680532" duration="6230000" />
-      <workItem from="1675214131113" duration="7679000" />
+      <workItem from="1675214131113" duration="16952000" />
     </task>
     <servers />
   </component>
@@ -146,6 +159,20 @@
           <line>18</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/utils/ClassUtils.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/utils/ClassUtils.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.UnsupportedOperationException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

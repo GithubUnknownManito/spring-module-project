@@ -16,6 +16,7 @@ public class CrudProviderColumn {
     public String property;
     public String column;
     public boolean isPrimary;
+    public boolean isRequired = false;
     public PrimaryType primaryType;
     public PrimaryGenerate PrimaryRule;
     public QueryType query;
@@ -123,21 +124,21 @@ public class CrudProviderColumn {
         set(primary);
     }
 
-    public boolean isBlank(){
-        Object value = get();
-        if(Objects.isNull(value)){
-            return true;
-        }
-        if(value instanceof String){
-            return StringUtils.isBlank(value.toString());
-        }
-        return false;
+    public boolean isNull(){
+        return Objects.isNull(get());
     }
 
-    public boolean isNotBlank(){
-        return !isBlank();
+    public boolean isNonNull(){
+        return !isNull();
     }
 
+    public boolean requireNonNull(){
+        if(!isRequired){
+            return isNonNull();
+        }
+        Objects.requireNonNull(get(), String.format("%s类中字段为必填", targetObject.getClass(), property));
+        return true;
+    }
 
     public static void replace(CrudProviderColumn target, CrudProviderColumn result){
         target.replace(result);
@@ -163,6 +164,7 @@ public class CrudProviderColumn {
         crudProviderColumn.javaType = column.javaType();
         crudProviderColumn.primaryType = column.primaryType();
         crudProviderColumn.queryModel = column.queryModel();
+        crudProviderColumn.isRequired = column.isRequired();
         crudProviderColumn.weight = 1;
         return crudProviderColumn;
     }

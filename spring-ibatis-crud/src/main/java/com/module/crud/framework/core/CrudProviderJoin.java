@@ -9,6 +9,7 @@ import org.springframework.core.annotation.AnnotationUtils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CrudProviderJoin {
@@ -33,10 +34,10 @@ public class CrudProviderJoin {
     public String on;
     private Map<String, CrudProviderColumn> CrudColumnMap = new HashMap<>();
 
-    public Stream<CrudProviderColumn> columns() {
+    public List<CrudProviderColumn> columns() {
         return CrudColumnMap.values().stream().map(item -> {
             item.setTableName(alias);
             return item;
-        });
+        }).collect(Collectors.toList());
     }
 }

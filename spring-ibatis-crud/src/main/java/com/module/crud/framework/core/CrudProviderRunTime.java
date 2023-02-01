@@ -17,8 +17,8 @@ public abstract class CrudProviderRunTime implements CrudProviderInterface {
     private Map<String, CrudProviderColumn> CrudColumnMap = new HashMap<>();
     private Map<String, CrudProviderJoin> CrudJoinMap = new HashMap<>();
     private Map<String, CrudSqlWhereExtension> CrudExtension = new HashMap<>();
-    private Object targetObject;
-    private Class<?> targetClass;
+    protected Object targetObject;
+    protected Class<?> targetClass;
     public String tableName;
     public String alias;
 

@@ -38,6 +38,11 @@ public @interface Column {
     public boolean isPrimary() default false;
 
     /**
+     * 是否必填，仅添加时验证
+     */
+    public boolean isRequired() default false;
+
+    /**
      * 主键类型
      */
     public PrimaryType primaryType() default PrimaryType.PRIMARY_KEY;

@@ -77,9 +77,28 @@ public class CrudFindProvider extends CrudProviderRunTime implements CrudProvide
 
     @Override
     public Stream<CrudProviderColumn> columns() {
-        Stream<CrudProviderColumn> tmp = super.columns();
+        List<CrudProviderColumn> tmp = super.columns().collect(Collectors.toList());
         if(isJoin()){
             List<CrudProviderJoin> joins = joins().collect(Collectors.toList());
+            for (int i = 0; i < joins.size(); i++) {
+                CrudProviderJoin providerJoin = joins.get(i);
+                for (int j = 0; j < providerJoin.columns().count(); j++) {
+                    providerJoin.columns()
+                }
+                
+                for (int j = 0; j < tmp.size(); j++) {
+                    CrudProviderColumn crudProviderColumn = tmp.get(j);
+                    if(!.anyMatch(crudProviderColumn1 -> crudProviderColumn.property.equals(crudProviderColumn1.property))){
+                        finalTmp.add(providerJoin);
+                    }
+                }
+                super.columns().forEach(crudProviderColumn -> {
+
+                });
+            }
+
+
+
             for (int i = 0; i < joins.size(); i++) {
                 tmp = Stream.concat(tmp, joins.get(i).columns());
             }
@@ -99,7 +118,7 @@ public class CrudFindProvider extends CrudProviderRunTime implements CrudProvide
     }
 
     public String[] joinsSql(){
-        return joins().map(join -> String.format("%s AS %s ON %s")).toArray(String[]::new);
+        return joins().map(join -> String.format("%s AS %s ON %s", join.tableName, join.alias, join.on)).toArray(String[]::new);
     }
 
     public Stream<CrudProviderColumn> where(){

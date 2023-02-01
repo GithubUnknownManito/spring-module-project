@@ -15,16 +15,91 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class ClassUtils {
-    public static List<Field> getFields(Class<?> aClass) {
+
+    public static FieldArray getFields(Class<?> aClass){
+        FieldArray fields = new FieldArray();
         Table table = AnnotationUtils.findAnnotation(aClass, Table.class);
-        List<Field> fields = Arrays.asList(aClass.getDeclaredFields());
+        fields.addAll(aClass.getDeclaredFields());
         if (!table.inheritance().equals(void.class)) {
-            fields.addAll(getFields(table.inheritance()));
+            System.out.println(table.inheritance());
+            fields.concat(getFields(table.inheritance()));
         }
-        return fields.stream().filter(field -> !field.isAnnotationPresent(Ignore.class)).collect(Collectors.toList());
+        return fields;
+    }
+
+    public static class FieldArray {
+        private Field[] fields = new Field[0];
+
+        public void add(Field field){
+            addAll(new Field[]{field});
+        }
+
+        public void addAll(Field ...array) {
+            int repeatLength = 0;
+            Field[] result= new Field[fields.length + array.length];
+            for (int i = 0; i < fields.length; i++) {
+                result[i] = fields[i];
+            }
+            for (int i = 0; i < array.length; i++) {
+                Field field = array[i];
+                boolean isRepeat = false;
+                for (int j = 0; j < fields.length; j++) {
+                    if(fields[j].getName().equals(field.getName())){
+                        repeatLength++;
+                        isRepeat = true;
+                        break;
+                    }
+                }
+                if(!isRepeat){
+                    result[fields.length + i] = field;
+                }
+            }
+            if(repeatLength != 0){
+                Field[] root= new Field[fields.length + array.length - repeatLength];
+                int deep = 0;
+                for (int i = 0; i < result.length; i++) {
+                    if(Objects.nonNull(result[i])){
+                        root[deep++] = result[i];
+                    }
+                }
+                fields = root;
+            } else {
+                fields = result;
+            }
+        }
+
+        public void addList(List<Field> fieldList){
+            Field[] result= new Field[fieldList.size()];
+            fieldList.toArray(result);
+            addAll(result);
+        }
+
+        public void concat(FieldArray fieldArray){
+            addAll(fieldArray.toArray());
+        }
+
+        public int size(){
+            return fields.length;
+        }
+
+        public Field get(int index) {
+            return fields[index];
+        }
+
+        public Field[] toArray(){
+            return fields;
+        }
+
+        public void forEach(Consumer<Field> action) {
+            Objects.requireNonNull(action);
+            for (Field t : fields) {
+                action.accept(t);
+            }
+        }
     }
 
     public static Map<String, CrudProviderColumn> getColumnMap(Class<?> targetClass) {
@@ -37,14 +112,23 @@ public class ClassUtils {
             if (column.inheritance().equals(void.class)) {
                 CrudColumnMap.put(column.property(), CrudProviderColumn.create(columns[i]));
             } else {
-                CrudColumnMap.putAll(getColumnInheritance(column));
+                Map<String, CrudProviderColumn> providerColumnMap = getColumnInheritance(column);
+                for (String name: providerColumnMap.keySet()) {
+                    if(!CrudColumnMap.containsKey(name)){
+                        CrudColumnMap.put(name, CrudColumnMap.get(name));
+                    }
+                }
+//                CrudColumnMap.putAll();
             }
         }
 
-        List<Field> fields = getFields(targetClass);
+        FieldArray fields = getFields(targetClass);
 
         fields.forEach(field -> {
+            System.out.println(field);
             Column column = AnnotationUtils.findAnnotation(field, Column.class);
+            System.out.println(column);
+            if(Objects.isNull(column)){ return;}
             if (column.inheritance().equals(void.class)) {
                 CrudProviderColumn.replace(CrudColumnMap.get(field.getName()), column, field);
             } else {
@@ -133,7 +217,7 @@ public class ClassUtils {
     public static Map<String, CrudSqlWhereExtension> getExpandWhere(Object target){
         Table table = AnnotationUtils.findAnnotation(target.getClass(), Table.class);
         Map<String,CrudSqlWhereExtension> whereMap = new HashMap<>();
-        List<Field> fields = getFields(target.getClass());
+        FieldArray fields = getFields(target.getClass());
         for (int i = 0; i < fields.size(); i++) {
             Field field = fields.get(i);
             Expand.Where expand = AnnotationUtils.findAnnotation(field, Expand.Where.class);
