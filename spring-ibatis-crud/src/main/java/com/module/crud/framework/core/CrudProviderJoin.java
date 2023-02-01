@@ -8,6 +8,7 @@ import org.apache.logging.log4j.util.Strings;
 import org.springframework.core.annotation.AnnotationUtils;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

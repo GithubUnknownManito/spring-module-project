@@ -82,28 +82,15 @@ public class CrudFindProvider extends CrudProviderRunTime implements CrudProvide
             List<CrudProviderJoin> joins = joins().collect(Collectors.toList());
             for (int i = 0; i < joins.size(); i++) {
                 CrudProviderJoin providerJoin = joins.get(i);
-                for (int j = 0; j < providerJoin.columns().count(); j++) {
-                    providerJoin.columns()
-                }
-                
-                for (int j = 0; j < tmp.size(); j++) {
-                    CrudProviderColumn crudProviderColumn = tmp.get(j);
-                    if(!.anyMatch(crudProviderColumn1 -> crudProviderColumn.property.equals(crudProviderColumn1.property))){
-                        finalTmp.add(providerJoin);
+                for (int j = 0; j < providerJoin.columns().size(); j++) {
+                    CrudProviderColumn joinProviderColumn = providerJoin.columns().get(j);
+                    if(!tmp.stream().anyMatch(crudProviderColumn -> crudProviderColumn.property.equals(joinProviderColumn.property))){
+                        tmp.add(joinProviderColumn);
                     }
                 }
-                super.columns().forEach(crudProviderColumn -> {
-
-                });
-            }
-
-
-
-            for (int i = 0; i < joins.size(); i++) {
-                tmp = Stream.concat(tmp, joins.get(i).columns());
             }
         }
-        return tmp;
+        return tmp.stream();
     }
 
     public String tableNameSelect(){
