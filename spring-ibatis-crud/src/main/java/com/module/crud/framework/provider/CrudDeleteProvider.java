@@ -10,6 +10,23 @@ public class CrudDeleteProvider extends CrudProviderRunTime implements CrudProvi
 
     @Override
     public String run() {
+
+        CrudConfigure configure =  SpringContextUtils.getBean(CrudConfigure.class);
+        if(configure.isLogicalDeletion()){
+            return new SQL(){{
+                UPDATE(tableName);
+                SET("status = 1");
+                WHERE(columnPrimary());
+            }}.toString();
+        } else {
+
+        }
+
         return null;
+    }
+
+    public String[] columnPrimary(){
+        return columns().filter(column -> column.isPrimary && column.isNotBlank())
+                .map(column -> String.format("%s = %s",column.column, column.valueSql())).toArray(String[]::new);
     }
 }

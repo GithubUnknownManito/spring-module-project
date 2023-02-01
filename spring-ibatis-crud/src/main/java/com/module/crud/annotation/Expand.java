@@ -5,7 +5,7 @@ import org.springframework.core.annotation.AliasFor;
 
 import java.lang.annotation.*;
 
-@Target({ElementType.FIELD})
+@Target({})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 /**
@@ -13,9 +13,9 @@ import java.lang.annotation.*;
  */
 public @interface Expand {
     public Where[] Where();
-
-    public String param();
-
+    @Target({ElementType.FIELD})
+    @Retention(RetentionPolicy.RUNTIME)
+    @Documented
     public @interface Where {
         public String value() default "";
     }

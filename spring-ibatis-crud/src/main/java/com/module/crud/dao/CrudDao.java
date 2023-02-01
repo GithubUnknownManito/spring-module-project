@@ -13,8 +13,7 @@ public interface CrudDao<E extends ObjectEntity> extends CrudDaoInterface<E> {
     public static final String __JavaAlias = "param";
     @Override
     @InsertProvider(type = CrudInsertProvider.class, method = "initialize")
-    @InsertProvider.List({})
-    @Results
+//    @InsertProvider.List({})
     E inset(@Param(__JavaAlias) E e);
 
     @Override

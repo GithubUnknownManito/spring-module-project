@@ -33,6 +33,20 @@ public class CrudFindListProvider extends CrudFindProvider implements CrudProvid
                     WHERE(column.where());
                     where.getAndIncrement();
                 });
+
+                expandWhere().forEach(expand -> {
+                    expand.forEach(_where -> {
+                        if(where().count() != 0){
+                            if(_where.model.equals("AND")){
+                                AND();
+                            } else if ((_where.model.equals("OR"))){
+                                OR();
+                            }
+                        }
+                        WHERE(String.format("%s %s", _where.column, _where.model));
+                    });
+                });
+
                 order().forEach(column -> {
                     switch (column.sort) {
                         case ASC:{

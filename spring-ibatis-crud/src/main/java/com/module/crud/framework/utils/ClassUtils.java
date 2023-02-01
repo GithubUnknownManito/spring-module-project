@@ -1,11 +1,14 @@
 package com.module.crud.framework.utils;
 
 import com.module.crud.annotation.Column;
+import com.module.crud.annotation.Expand;
 import com.module.crud.annotation.Ignore;
 import com.module.crud.annotation.Table;
-import com.module.crud.enumerate.Pattern;
+import com.module.crud.dao.CrudDao;
+import com.module.crud.entity.ObjectEntity;
 import com.module.crud.framework.enumerate.MethodModel;
 import com.module.crud.framework.core.CrudProviderColumn;
+import com.module.crud.framework.sql.CrudSqlWhereExtension;
 import org.springframework.core.annotation.AnnotationUtils;
 
 import java.lang.reflect.Field;
@@ -127,23 +130,20 @@ public class ClassUtils {
         }
     }
 
-
-
-
-
-//    public static Object GeneratePrimary(CrudColumnAttr attr) {
-//        if (PrimaryType.FOREIGN_KEY.equals(attr.primaryType)) {
-//            return null;
-//        }
-//        switch (attr.PrimaryRule) {
-//            case UUID: {
-//                return UUID.randomUUID().toString();
-//            }
-//            case STAMP: {
-//                return System.currentTimeMillis();
-//            }
-//        }
-//        return null;
-//    }
-
+    public static Map<String, CrudSqlWhereExtension> getExpandWhere(Object target){
+        Table table = AnnotationUtils.findAnnotation(target.getClass(), Table.class);
+        Map<String,CrudSqlWhereExtension> whereMap = new HashMap<>();
+        List<Field> fields = getFields(target.getClass());
+        for (int i = 0; i < fields.size(); i++) {
+            Field field = fields.get(i);
+            Expand.Where expand = AnnotationUtils.findAnnotation(field, Expand.Where.class);
+            if(Objects.nonNull(expand)){
+                Map<String,Object> data = (Map<String,Object>) getValue(target,field.getName());
+                if(data.containsKey(ObjectEntity.WHERE_KEY)){
+                    whereMap.put(expand.value(), (CrudSqlWhereExtension) data.get(ObjectEntity.WHERE_KEY));
+                }
+            }
+        }
+        return whereMap;
+    }
 }

@@ -2,6 +2,7 @@ package com.module.crud.framework.core;
 
 import com.module.crud.annotation.Join;
 import com.module.crud.annotation.Table;
+import com.module.crud.framework.sql.CrudSqlWhereExtension;
 import com.module.crud.framework.utils.ClassUtils;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -15,7 +16,7 @@ import java.util.stream.Stream;
 public abstract class CrudProviderRunTime implements CrudProviderInterface {
     private Map<String, CrudProviderColumn> CrudColumnMap = new HashMap<>();
     private Map<String, CrudProviderJoin> CrudJoinMap = new HashMap<>();
-    private Map<String, String> CrudExtension = new HashMap<>();
+    private Map<String, CrudSqlWhereExtension> CrudExtension = new HashMap<>();
     private Object targetObject;
     private Class<?> targetClass;
     public String tableName;
@@ -45,7 +46,7 @@ public abstract class CrudProviderRunTime implements CrudProviderInterface {
         for (int i = 0; i < joins.length; i++) {
             CrudJoinMap.put(joins[i].alias(), new CrudProviderJoin(joins[i]));
         }
-
+        CrudExtension = ClassUtils.getExpandWhere(data);
         return run();
     }
 
@@ -66,7 +67,7 @@ public abstract class CrudProviderRunTime implements CrudProviderInterface {
     }
 
     @Override
-    public Stream<String> expandWhere() {
+    public Stream<CrudSqlWhereExtension> expandWhere() {
         return CrudExtension.values().stream();
     }
 

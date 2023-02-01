@@ -38,5 +38,5 @@ public class BaseEntity extends ObjectEntity {
     private Date updateDate;
     private String updateBy;
     private String remark;
-    private int status;
+    private int status = 0;
 }
