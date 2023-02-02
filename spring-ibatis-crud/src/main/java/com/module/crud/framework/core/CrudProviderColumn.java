@@ -121,7 +121,9 @@ public class CrudProviderColumn {
                 }
             }
         }
-        set(primary);
+        if(Objects.nonNull(primary)){
+            set(primary);
+        }
     }
 
     public boolean isNull(){

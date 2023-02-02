@@ -29,11 +29,13 @@ public abstract class CrudProviderRunTime implements CrudProviderInterface {
         switch (table.pattern()) {
             case ANNOTATION:{
                 CrudColumnMap =  ClassUtils.getColumnMap(targetClass);
+                break;
             }
             case FIELD:{
                 ClassUtils.getFields(targetClass).forEach(item -> {
                     CrudColumnMap.put(item.getName(), CrudProviderColumn.create(item));
                 });
+                break;
             }
         }
         targetObject = data;

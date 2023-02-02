@@ -25,7 +25,6 @@ public class ClassUtils {
         Table table = AnnotationUtils.findAnnotation(aClass, Table.class);
         fields.addAll(aClass.getDeclaredFields());
         if (!table.inheritance().equals(void.class)) {
-            System.out.println(table.inheritance());
             fields.concat(getFields(table.inheritance()));
         }
         return fields;
@@ -115,7 +114,7 @@ public class ClassUtils {
                 Map<String, CrudProviderColumn> providerColumnMap = getColumnInheritance(column);
                 for (String name: providerColumnMap.keySet()) {
                     if(!CrudColumnMap.containsKey(name)){
-                        CrudColumnMap.put(name, CrudColumnMap.get(name));
+                        CrudColumnMap.put(name, providerColumnMap.get(name));
                     }
                 }
 //                CrudColumnMap.putAll();
@@ -125,9 +124,7 @@ public class ClassUtils {
         FieldArray fields = getFields(targetClass);
 
         fields.forEach(field -> {
-            System.out.println(field);
             Column column = AnnotationUtils.findAnnotation(field, Column.class);
-            System.out.println(column);
             if(Objects.isNull(column)){ return;}
             if (column.inheritance().equals(void.class)) {
                 CrudProviderColumn.replace(CrudColumnMap.get(field.getName()), column, field);
@@ -139,7 +136,7 @@ public class ClassUtils {
     }
 
     public static Map<String, CrudProviderColumn> getColumnInheritance(Column column){
-        if(column.inheritance().equals(void.class)){
+        if(!column.inheritance().equals(void.class)){
             return getColumnMap(column.inheritance());
         }
         return new HashMap<>();

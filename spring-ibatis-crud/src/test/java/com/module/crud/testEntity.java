@@ -1,12 +1,14 @@
-package com.module.crud.entity;
+package com.module.crud;
 
 import com.module.crud.annotation.*;
+import com.module.crud.entity.BaseEntity;
 import lombok.Data;
-import org.apache.ibatis.type.JdbcType;
 
 @Table(
+        name = "test",
         columns = {
                 @Column(column = "id", property = "id", isPrimary = true),
+                @Column(inheritance = BaseEntity.class),
         },
         joinList = {
                 @Join(quote = test1Rntity.class, alias = "b", on = "a.id = b.id", columns = {

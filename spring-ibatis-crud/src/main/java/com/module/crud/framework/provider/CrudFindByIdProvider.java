@@ -59,6 +59,6 @@ public class CrudFindByIdProvider extends CrudFindProvider implements CrudProvid
         if(columnStream.count() ==0 ){
             throw new RuntimeException(String.format("%s类查询不到字段主键的标识，找不到有效的主键", targetClass));
         }
-        return columnStream;
+        return  columns().filter(column-> column.isPrimary && column.isNonNull());
     }
 }

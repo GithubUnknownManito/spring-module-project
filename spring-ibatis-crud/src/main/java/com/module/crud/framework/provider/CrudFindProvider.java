@@ -1,6 +1,7 @@
 package com.module.crud.framework.provider;
 
 import com.module.crud.enumerate.ColumnSort;
+import com.module.crud.enumerate.QueryModel;
 import com.module.crud.enumerate.QueryType;
 import com.module.crud.framework.core.CrudProviderColumn;
 import com.module.crud.framework.core.CrudProviderInterface;
@@ -71,7 +72,7 @@ public class CrudFindProvider extends CrudProviderRunTime implements CrudProvide
                 });
             }
         });
-        sb.insert(5, "TOP 1 ");
+        sb.insert(5, " TOP 1 ");
         return sb.toString();
     }
 
@@ -109,7 +110,7 @@ public class CrudFindProvider extends CrudProviderRunTime implements CrudProvide
     }
 
     public Stream<CrudProviderColumn> where(){
-        return columns().filter(column-> !QueryType.UNSET.equals(column.query));
+        return columns().filter(column-> !QueryType.UNSET.equals(column.query) || column.isPrimary == true );
     }
 
     public Stream<CrudProviderColumn> order(){

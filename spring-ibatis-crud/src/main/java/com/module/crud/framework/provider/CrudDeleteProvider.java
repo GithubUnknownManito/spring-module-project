@@ -10,7 +10,6 @@ public class CrudDeleteProvider extends CrudProviderRunTime implements CrudProvi
 
     @Override
     public String run() {
-
         CrudConfigure configure =  SpringContextUtils.getBean(CrudConfigure.class);
         if(configure.isLogicalDeletion()){
             return new SQL(){{
@@ -19,10 +18,13 @@ public class CrudDeleteProvider extends CrudProviderRunTime implements CrudProvi
                 WHERE(columnPrimary());
             }}.toString();
         } else {
-
+            return new SQL(){
+                {
+                    DELETE_FROM(tableName);
+                    WHERE(columnPrimary());
+                }
+            }.toString();
         }
-
-        return null;
     }
 
     public String[] columnPrimary(){
