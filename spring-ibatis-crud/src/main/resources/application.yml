@@ -1,9 +1,9 @@
 # slf4j日志配置
-logging:
-  #  config: classpath:/logback.xml
-  # 配置级别
-  level:
-    root: info
+#logging:
+#  #  config: classpath:/logback.xml
+#  # 配置级别
+#  level:
+#    root: info
 
 #spring:
 #  datasource:

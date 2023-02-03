@@ -5,38 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47e3a1c8-15ff-40d9-ae76-cffe246589a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/Column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/Many.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/Many.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/One.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/annotation/One.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/api/CrudServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/api/CrudServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/common/CrudConfigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/common/CrudConfigure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/dao/CrudDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/structure/dao/CrudDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/structure/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/entity/ObjectEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/structure/entity/ObjectEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderColumn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderRunTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/core/CrudProviderRunTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/interceptor/OneInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/interceptor/OneInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/sql/CrudSqlWhereExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/sql/CrudSqlWhereExtension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/utils/ClassUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/utils/ClassUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/service/CrudServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/structure/service/CrudServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/service/ICrudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/structure/service/ICrudService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/test/java/com/module/crud/CrudSqlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/test/java/com/module/crud/CrudSqlTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/test/java/com/module/crud/test1Rntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/test/java/com/module/crud/test1Rntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/test/java/com/module/crud/testEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/test/java/com/module/crud/testEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/SpringModuleMainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/SpringModuleMainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/dao/RoomDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/dao/RoomDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/entity/RoomEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/entity/RoomEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/service/IRoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/service/IRoomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/service/Impl/RoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/service/Impl/RoomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/web/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/web/RoomController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +129,7 @@
       <workItem from="1674965997808" duration="40655000" />
       <workItem from="1675152643930" duration="6000" />
       <workItem from="1675152680532" duration="6230000" />
-      <workItem from="1675214131113" duration="57874000" />
+      <workItem from="1675214131113" duration="58290000" />
     </task>
     <servers />
   </component>
