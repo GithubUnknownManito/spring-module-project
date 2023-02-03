@@ -1,7 +1,7 @@
 package com.module.crud;
 
 import com.module.crud.annotation.*;
-import com.module.crud.entity.BaseEntity;
+import com.module.crud.structure.entity.BaseEntity;
 import lombok.Data;
 
 @Table(

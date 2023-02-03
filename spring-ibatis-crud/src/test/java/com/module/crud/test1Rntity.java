@@ -1,11 +1,9 @@
 package com.module.crud;
 
 import com.module.crud.annotation.Column;
-import com.module.crud.annotation.Join;
 import com.module.crud.annotation.Table;
-import com.module.crud.entity.BaseEntity;
+import com.module.crud.structure.entity.BaseEntity;
 import lombok.Data;
-import org.apache.ibatis.type.JdbcType;
 
 @Table(
         name = "test1Rntity",

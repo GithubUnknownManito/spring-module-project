@@ -1,7 +1,7 @@
 package com.module.crud.framework.core;
 
 import com.module.crud.annotation.Column;
-import com.module.crud.dao.CrudDao;
+import com.module.crud.structure.dao.CrudDao;
 import com.module.crud.enumerate.*;
 import com.module.crud.framework.utils.ClassUtils;
 import com.module.crud.framework.utils.StringUtils;

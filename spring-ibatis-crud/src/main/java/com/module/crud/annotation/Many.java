@@ -1,8 +1,5 @@
 package com.module.crud.annotation;
 
-import com.module.crud.entity.ObjectEntity;
-import com.module.crud.enumerate.Pattern;
-
 import java.lang.annotation.*;
 
 @Target({})

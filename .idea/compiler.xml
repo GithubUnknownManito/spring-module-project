@@ -2,12 +2,14 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-module-main" />
         <module name="spring-module-common" />
+        <module name="Conversation" />
         <module name="spring-ibatis-crud" />
         <module name="spring-module-api" />
       </profile>
@@ -18,6 +20,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Conversation" options="-parameters" />
       <module name="spring-ibatis-crud" options="-parameters" />
       <module name="spring-module-api" options="-parameters" />
       <module name="spring-module-common" options="-parameters" />

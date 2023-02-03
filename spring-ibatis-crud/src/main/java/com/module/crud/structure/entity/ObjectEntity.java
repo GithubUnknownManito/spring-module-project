@@ -1,5 +1,6 @@
-package com.module.crud.entity;
+package com.module.crud.structure.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.module.crud.annotation.Expand;
 import com.module.crud.annotation.Ignore;
 import com.module.crud.framework.core.CrudPage;
@@ -20,9 +21,10 @@ public class ObjectEntity implements Serializable {
 
     @Ignore
     @Expand.Where(WHERE_KEY)
+    @JsonIgnore
     private Map<String,Object> SqlData = new HashMap<>();
 
-    public CrudSqlWhereExtension getWhere(){
+    public CrudSqlWhereExtension Where(){
         CrudSqlWhereExtension where = null;
         if(SqlData.containsKey(WHERE_KEY)){
             where = (CrudSqlWhereExtension) SqlData.get(WHERE_KEY);
@@ -38,10 +40,12 @@ public class ObjectEntity implements Serializable {
         SqlData.put(DISABLE_PRIMARY, false);
     }
 
+    @JsonIgnore
     public Map<String, Object> getSqlData() {
         return SqlData;
     }
 
+    @JsonIgnore
     public CrudPage getPage() {
         return page;
     }

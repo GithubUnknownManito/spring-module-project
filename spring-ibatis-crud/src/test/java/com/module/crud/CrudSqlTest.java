@@ -7,7 +7,7 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)//spring运行器
-@TestPropertySource("classpath:application.properties")
+@TestPropertySource("classpath:application.yml")
 public class CrudSqlTest {
     @Test
     public void emd(){

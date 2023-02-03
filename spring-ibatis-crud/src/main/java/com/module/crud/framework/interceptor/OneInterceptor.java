@@ -10,9 +10,9 @@ import org.apache.ibatis.session.RowBounds;
 
 import java.util.Properties;
 
-@Intercepts({
-        @Signature(type = ResultSetHandler.class, method = "query", args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class}),
-        @Signature(type = ResultSetHandler.class, method = "query", args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class, CacheKey.class, BoundSql.class})})
+//@Intercepts({
+//        @Signature(type = ResultSetHandler.class, method = "query", args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class}),
+//        @Signature(type = ResultSetHandler.class, method = "query", args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class, CacheKey.class, BoundSql.class})})
 public class OneInterceptor implements Interceptor {
     @Override
     public Object intercept(Invocation invocation) throws Throwable {

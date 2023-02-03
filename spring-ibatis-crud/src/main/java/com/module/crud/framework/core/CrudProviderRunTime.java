@@ -2,15 +2,15 @@ package com.module.crud.framework.core;
 
 import com.module.crud.annotation.Join;
 import com.module.crud.annotation.Table;
+import com.module.crud.structure.dao.CrudDao;
 import com.module.crud.framework.sql.CrudSqlWhereExtension;
 import com.module.crud.framework.utils.ClassUtils;
+import org.apache.ibatis.binding.MapperMethod;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.core.annotation.AnnotationUtils;
 
-import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Stream;
 
 public abstract class CrudProviderRunTime implements CrudProviderInterface {
@@ -22,8 +22,13 @@ public abstract class CrudProviderRunTime implements CrudProviderInterface {
     public String tableName;
     public String alias;
 
-    public <E> String initialize(E data) {
-        Table table = AnnotationUtils.findAnnotation(targetClass = data.getClass(), Table.class);
+    public <E> String initialize(E map) {
+        if(map instanceof MapperMethod.ParamMap){
+            targetObject = ((MapperMethod.ParamMap<?>) map).get(CrudDao.__JavaAlias);
+        } else {
+            targetObject = map;
+        }
+        Table table = AnnotationUtils.findAnnotation(targetClass = targetObject.getClass(), Table.class);
         this.tableName = table.name();
         this.alias = Strings.isBlank(table.alias())?table.name():table.alias();
         switch (table.pattern()) {
@@ -38,7 +43,7 @@ public abstract class CrudProviderRunTime implements CrudProviderInterface {
                 break;
             }
         }
-        targetObject = data;
+
         columns().forEach(columns -> {
             columns.setTargetObject(targetObject);
             columns.setTableName(alias);
@@ -48,7 +53,7 @@ public abstract class CrudProviderRunTime implements CrudProviderInterface {
         for (int i = 0; i < joins.length; i++) {
             CrudJoinMap.put(joins[i].alias(), new CrudProviderJoin(joins[i]));
         }
-        CrudExtension = ClassUtils.getExpandWhere(data);
+        CrudExtension = ClassUtils.getExpandWhere(targetObject);
         return run();
     }
 

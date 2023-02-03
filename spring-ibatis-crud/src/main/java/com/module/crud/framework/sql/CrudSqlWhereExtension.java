@@ -1,13 +1,13 @@
 package com.module.crud.framework.sql;
 
-import com.module.crud.dao.CrudDao;
+import com.module.crud.structure.dao.CrudDao;
 import org.apache.logging.log4j.util.Strings;
 
+import java.io.Serializable;
 import java.util.*;
 import java.util.function.Consumer;
 
-public class CrudSqlWhereExtension {
-
+public class CrudSqlWhereExtension implements Serializable {
     private CrudWhereColumn currColumn;
     private List<CrudWhereColumn> crudWhereColumns = new ArrayList<>();
     private Map<String, Object> data = new HashMap<>();

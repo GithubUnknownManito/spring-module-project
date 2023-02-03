@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.module.main.voice.dao.RoomDao" >
+    <resultMap id="userMap" type="com.module.main.voice.entity.RoomEntity" >
+        <result property="id" column="id"></result>
+        <result property="name" column="name"></result>
+        <result property="createDate" column="create_date"></result>
+        <result property="createBy" column="create_by"></result>
+        <result property="update_by" column="updateBy"></result>
+        <result property="remark" column="remark"></result>
+        <result property="status" column="status"></result>
+    </resultMap>
+
+</mapper>

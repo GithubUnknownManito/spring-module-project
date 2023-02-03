@@ -2,10 +2,8 @@ package com.module.crud.framework.utils;
 
 import com.module.crud.annotation.Column;
 import com.module.crud.annotation.Expand;
-import com.module.crud.annotation.Ignore;
 import com.module.crud.annotation.Table;
-import com.module.crud.dao.CrudDao;
-import com.module.crud.entity.ObjectEntity;
+import com.module.crud.structure.entity.ObjectEntity;
 import com.module.crud.framework.enumerate.MethodModel;
 import com.module.crud.framework.core.CrudProviderColumn;
 import com.module.crud.framework.sql.CrudSqlWhereExtension;
@@ -16,7 +14,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
 public class ClassUtils {
 

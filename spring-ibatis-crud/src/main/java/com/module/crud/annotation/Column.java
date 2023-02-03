@@ -1,6 +1,5 @@
 package com.module.crud.annotation;
 
-import com.module.crud.entity.ObjectEntity;
 import com.module.crud.enumerate.*;
 import org.apache.ibatis.type.JdbcType;
 import org.springframework.core.annotation.AliasFor;

@@ -1,4 +1,4 @@
-package com.module.crud.entity;
+package com.module.crud.structure.entity;
 
 import com.module.crud.annotation.*;
 import lombok.Data;
