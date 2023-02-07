@@ -9,34 +9,34 @@ import java.util.List;
 public class CrudServiceImpl <E extends BaseEntity, D extends CrudDao<E>> implements ICrudService<E,D> {
 
     @Autowired
-    public D dao;
+    private D crudDao;
     @Override
     public E inset(E e) {
-        return dao.inset(e);
+        return crudDao.inset(e);
     }
 
     @Override
     public E find(E e) {
-        return dao.find(e);
+        return crudDao.find(e);
     }
 
     @Override
     public Long update(E e) {
-        return dao.update(e);
+        return crudDao.update(e);
     }
 
     @Override
     public Long delete(E e) {
-        return dao.delete(e);
+        return crudDao.delete(e);
     }
 
     @Override
     public List<E> findList(E e) {
-        return dao.findList(e);
+        return crudDao.findList(e);
     }
 
     @Override
     public E findById(E e) {
-        return dao.findById(e);
+        return crudDao.findById(e);
     }
 }

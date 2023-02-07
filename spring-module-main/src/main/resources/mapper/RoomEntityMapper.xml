@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.module.main.voice.dao.RoomDao" >
+<mapper namespace="com.module.main.voice.dao.RoomDao">
     <resultMap id="userMap" type="com.module.main.voice.entity.RoomEntity" >
         <result property="id" column="id"></result>
         <result property="name" column="name"></result>
@@ -9,6 +9,15 @@
         <result property="update_by" column="updateBy"></result>
         <result property="remark" column="remark"></result>
         <result property="status" column="status"></result>
+        <association property="homeOwnerEntity" column="homeOwner" select="d">
+            <result property="id" column="id"></result>
+            <result property="name" column="name"></result>
+        </association>
     </resultMap>
-
+    <select id="dddd" parameterType="com.module.main.voice.entity.RoomEntity" resultMap="userMap">
+        select * from internal_room
+    </select>
+    <select id="d" resultType="com.module.main.voice.entity.RoomUserEntity">
+        select * from internal_user where id = #{homeOwner}
+    </select>
 </mapper>

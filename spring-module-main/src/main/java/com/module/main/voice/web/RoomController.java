@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
+import java.util.List;
 
 @Controller
 @RequestMapping("/room-api")
@@ -19,5 +20,11 @@ public class RoomController {
     @ResponseBody
     public RoomEntity getRoomEntity(@Param("id") Long id){
         return iRoomService.findById(new RoomEntity(id));
+    }
+
+    @GetMapping("/list")
+    @ResponseBody
+    public List<RoomEntity> getList(@Param("id") Long id){
+        return iRoomService.ddd();
     }
 }

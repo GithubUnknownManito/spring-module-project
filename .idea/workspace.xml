@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47e3a1c8-15ff-40d9-ae76-cffe246589a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/interceptor/CrudResultInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/entity/RoomUserEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/common/CrudConfigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/common/CrudConfigure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/interceptor/OneInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/interceptor/OneInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/structure/service/CrudServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/structure/service/CrudServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/SpringModuleMainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/SpringModuleMainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/dao/RoomDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/dao/RoomDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/entity/RoomEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/entity/RoomEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/service/IRoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/service/IRoomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/service/Impl/RoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/service/Impl/RoomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/web/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/java/com/module/main/voice/web/RoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-module-main/src/main/resources/mapping/RoomEntityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-module-main/src/main/resources/mapper/RoomEntityMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +67,8 @@
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "E:/.project/spring-module-project/internal-voice-control",
-    "project.structure.last.edited": "Libraries",
+    "last_opened_file_path": "E:/.project/spring-module-project/spring-module-main/src/main/resources",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.48735633",
     "settings.editor.selected.configurable": "preferences.lookFeel",
@@ -129,7 +141,7 @@
       <workItem from="1674965997808" duration="40655000" />
       <workItem from="1675152643930" duration="6000" />
       <workItem from="1675152680532" duration="6230000" />
-      <workItem from="1675214131113" duration="58290000" />
+      <workItem from="1675214131113" duration="78287000" />
     </task>
     <servers />
   </component>
@@ -157,13 +169,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/interceptor/OneInterceptor.java</url>
-          <line>18</line>
+          <line>29</line>
           <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/interceptor/OneInterceptor.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.11/mybatis-3.5.11.jar!/org/apache/ibatis/executor/result/DefaultMapResultHandler.class</url>
@@ -184,6 +191,16 @@
           <url>jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.11/mybatis-3.5.11.jar!/org/apache/ibatis/session/defaults/DefaultSqlSession.class</url>
           <line>96</line>
           <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/5.3.2/pagehelper-5.3.2.jar!/com/github/pagehelper/PageInterceptor.class</url>
+          <line>138</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-ibatis-crud/src/main/java/com/module/crud/framework/interceptor/OneInterceptor.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.UnsupportedOperationException" package="java.lang" />

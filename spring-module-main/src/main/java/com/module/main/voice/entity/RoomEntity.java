@@ -15,6 +15,8 @@ import lombok.Data;
 public class RoomEntity extends BaseEntity {
     private Long id;
     private String name;
+    private String homeOwner;
+    private RoomUserEntity homeOwnerEntity;
 
     public RoomEntity() {
     }
